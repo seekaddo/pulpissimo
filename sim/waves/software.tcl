@@ -1,6 +1,7 @@
 # add fc execution trace
 set rvcores [find instances -recursive -bydu riscv_core -nodu]
 set fpuprivate [find instances -recursive -bydu fpu_private]
+set pulpsoc [find instances -recursive -bydu pulp_soc -nodu]
 
 if {$rvcores ne ""} {
 
@@ -16,6 +17,17 @@ if {$rvcores ne ""} {
     add wave -group "Software Debugging" $rvcores/id_stage_i/registers_i/riscv_register_file_i/mem
     if {$fpuprivate ne ""} {
 	add wave -group "Software Debugging" $rvcores/id_stage_i/registers_i/riscv_register_file_i/mem_fp
+    }
+    #
+
+    if {$pulpsoc ne ""} {
+
+	add wave -group "Software Debugging" $pulpsoc/ape_core_rom_rdata
+	add wave -group "Software Debugging" $pulpsoc/ape_core_rom_wdata
+	add wave -group "Software Debugging" $pulpsoc/ape_core_rom_gnt
+	add wave -group "Software Debugging" $pulpsoc/ape_core_rom_rvalid
+
+	add wave -group "Software Debugging" $pulpsoc/ape_core_debug_l2
     }
 
 }
