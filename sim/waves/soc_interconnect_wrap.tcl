@@ -103,15 +103,16 @@ add wave -noupdate -group soc_interconnect_wrap -group axi_slave_plug /tb_pulp/i
 add wave -noupdate -group soc_interconnect_wrap -group axi_slave_plug /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_data_out_bus/r_user
 add wave -noupdate -group soc_interconnect_wrap -group axi_slave_plug /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_data_out_bus/r_valid
 add wave -noupdate -group soc_interconnect_wrap -group axi_slave_plug /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_data_out_bus/r_ready
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/req
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/add
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/wen
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/wdata
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/be
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/gnt
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/r_opc
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/r_rdata
-add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_mem_rom_bus/r_valid
+
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/req
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/add
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/wen
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/wdata
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/be
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/gnt
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/r_opc
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/r_rdata
+add wave -noupdate -group soc_interconnect_wrap -group boot_rom_slave /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/ape_mem_rom_bus/r_valid
 add wave -noupdate -group soc_interconnect_wrap -group apb_peripheral_bus /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_apb_periph_bus/APB_ADDR_WIDTH
 add wave -noupdate -group soc_interconnect_wrap -group apb_peripheral_bus /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_apb_periph_bus/APB_DATA_WIDTH
 add wave -noupdate -group soc_interconnect_wrap -group apb_peripheral_bus /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/s_apb_periph_bus/paddr

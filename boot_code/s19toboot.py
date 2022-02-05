@@ -189,8 +189,8 @@ for addr in sorted(slm_dict.keys()):
                 data_odd  = data
                 if archi == 'GAP': rom_file.write("@%x %s%s\n" % ((addr & 0xffff) / 2, data_odd, data_even))
                 elif archi in [ 'gap9', 'vega', 'wolfe', 'quentin', 'devchip', 'pulp', 'pulpissimo']:
-                    rom_file.write("{0:032b}\n" .format(int('0x' + data_even, 16)))
-                    rom_file.write("{0:032b}\n" .format(int('0x' + data_odd,  16)))
+                    rom_file.write("{0:034b}\n" .format(int('0x' + data_even, 16)))
+                    rom_file.write("{0:034b}\n" .format(int('0x' + data_odd,  16)))
                     #rom_file.write("@%x %s\n" % ((addr & 0xffff)-1, data_even))
                     #rom_file.write("@%x %s\n" % ((addr & 0xffff), data_odd))
                 elif archi == 'vivosoc3':

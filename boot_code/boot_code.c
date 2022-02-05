@@ -50,8 +50,9 @@ PLP_L2_DATA static boot_code_t    bootCode;
 
 static void __attribute__((noreturn)) bootFromOther(int platform);
 
-static void boot_abort() {
+static void boot_abort() { // todo: last part of bootcode waiting wfi sleep and wait for RAM instruction via jtag to take control
   hal_itc_enable_value_set(0);
+  asm volatile("lui a0,0xdead3");
   while(1)
   {
     hal_itc_wait_for_interrupt();
@@ -315,6 +316,7 @@ static boot_code_t *findDataFit(boot_code_t *data)
 
 static void bootFromRom(int hyperflash, int qpi)
 {
+  //asm volatile("lui a0,0xdead3");
   boot_code_t *data = &bootCode;
 
   data->hyperflash = hyperflash;
@@ -340,6 +342,7 @@ static void bootFromRom(int hyperflash, int qpi)
 
 static void __attribute__((noreturn)) bootFromJtag()
 {
+
   // Notify external env that we are ready for the loading
   apb_soc_jtag_reg_write(1);
 
@@ -389,6 +392,8 @@ static void __attribute__((noreturn)) bootFromOther(int platform)
   if (apb_soc_bootsel_get(ARCHI_APB_SOC_CTRL_ADDR))
   {
     // If bootsel pad is 1, it means an external loader wants us to stop so that it can take over
+    //todo: hier 2
+    asm volatile("lui a0,0xdead2");
     boot_abort();
   }
   else
@@ -402,7 +407,8 @@ static void __attribute__((noreturn)) bootFromOther(int platform)
 
 void __attribute__((noreturn)) main()
 {
-
+ //todo: hier 1
+ asm volatile("lui a0,0xdead1");
   bootFromOther(APB_SOC_PLT_OTHER);
 
   while(1);

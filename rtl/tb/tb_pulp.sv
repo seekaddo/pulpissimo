@@ -663,7 +663,8 @@ module tb_pulp;
                   $display("Loading custom stimuli from %s", stimuli_file);
                   $readmemh(stimuli_file, stimuli);
                end else begin
-                  $display("Loading default stimuli");
+                  $display("Loading default stimuli :%s ",stimuli_file);
+                  $display("Loading default stimuli :%s ","./vectors/stim.txt");
                   $readmemh("./vectors/stim.txt", stimuli);
                end
 
