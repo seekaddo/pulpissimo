@@ -19,7 +19,7 @@
 #
 
 pulp_soc:
-  commit: ape_v2.0.0
+  commit: ape_v2.0.1
   server: https://github.com
   group:  seekaddo
 
